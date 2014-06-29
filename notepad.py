@@ -1,4 +1,4 @@
-#maybe use db instead of multiple files
+#maybe use something else instead of multiple files, add try - catch
 import os
 
 class Note:
@@ -26,8 +26,9 @@ class Note:
 
 	def readNote(self, data):
 		f = open(data + '.txt') 
-		return f.read() 
-		
+		tmp = f.read()
+		f.close() 
+		return  tmp
 
 newNote = Note('20140729', 'test', 'ttttt' )
 newNote.saveNote()
